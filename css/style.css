@@ -1,17 +1,16 @@
-body,
-div,
-ul,
-li,
-p,
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  padding:0;
-  margin:0;
-  font-family: "Roboto", sans-serif;
+/**********Color Scheme
+#00427a - dark blue
+#71c5ef - sky blue
+#0066b3 - royal blue
+#0095da - light blue
+**********/
+
+
+
+body {
+  padding: 0;
+  margin: 0;
+  font-family: 'Montserrat', sans-serif;
 }
 
 .clear-fix {
@@ -21,95 +20,87 @@ h6 {
 .education-entry,
 .work-entry,
 .project-entry {
+  font-size: 1.25rem;
   padding: 0 5%;
 }
 
 h1 {
-  font-size: 40px;
-  color: #f5a623;
-  line-height: 48px;
+  color: #00427a;
+  font-family: 'Handlee', cursive;
+  font-size: 2.5rem;
+  line-height: 3rem;
   display: inline;
 }
 
 h2 {
-  font-weight: bold;
-  font-size: 24px;
-  color: #999;
-  line-height: 29px;
-  padding: 10px;
+  color: #00427a;
+  font-family: 'Handlee', cursive;
+  font-size: 1.5rem;
+  line-height: 1.8125rem;
+  padding: 0.625rem 5%;
 }
 
 h3 {
-  font-style: italic;
-  font-size: 20px;
-  color: #000;
-  line-height: 22px;
+  color: #00427a;
+  font-family: 'Handlee', cursive;
+  font-size: 1.25rem;
+  line-height: 1.375rem;
+  padding: 0.625rem 5%;
 }
 
 h4 {
-  font-weight: bold;
-  font-size: 14px;
-  color: #4a4a4a;
-  line-height: 17px;
+  color: #00427a;
+  font-family: 'Handlee', cursive;
+  font-size: 0.875rem;
+  line-height: 1.0625rem;
+  padding: 0.625rem 5%;
 }
-
-h2,
-h3,
-h4,
-h5 {
-  padding:10px 5%;
-
-}
-
 
 .date-text {
-  font-style: italic;
-  font-size: 14px;
-  color: #999;
-  line-height: 16px;
+  font-size: 0.875rem;
+  color: #0066b3;
+  line-height: 1rem;
   float: left;
 }
 
 .location-text {
-  font-style: italic;
-  font-size: 14px;
-  color: #999;
-  line-height: 16px;
+  font-size: 0.875rem;
+  color: #0066b3;
+  line-height: 1rem;
   float: right;
 
 }
 
 p {
-  font-size: 14px;
-  color: #333;
-  line-height: 21px;
+  font-size: 0.875rem;
+  line-height: 1rem;
 }
 
 a {
-  color: #1199c3;
+  color: #00427a;
+  font-weight: bold;
   text-decoration: none;
-  margin-top: 10px;
+  margin-top: 0.625rem;
   display: block;
 }
 
 .welcome-message {
-  font-style: italic;
-  font-size: 18px;
-  color: #f3f3f3;
-  line-height: 28px;
+  font-size: 1.25rem;
+  color: #00427a;
+  line-height: 1.75rem;
 }
 
 #skills-h3 {
-  color: #f5ae23;
+  color: #00427a;
   display: none;
 }
 
-.orange {
-  background-color: #f5ae23;
+.blue {
+  background-color: #00427a;
 }
 
-.orange-text {
-  color: #f5ae23;
+.blue-text {
+  color: #00427a;
 }
 
 .white-text {
@@ -117,19 +108,19 @@ a {
   color: #fff;
 }
 
-.gray {
-  background-color: #f3f3f3;
-  padding-bottom: 10px;
+.sky-blue {
+  background-color: #71c5ef;
+  padding-bottom: 0.625rem;
   clear:both;
 }
 
-.dark-gray {
-  background-color: #4a4a4a;
-}
+/*.light-gray {
+  background-color: #444;
+}*/
 
 /* TODO: Replace with image later */
 #header {
-  background-color: #484848;
+  background-color: #0095da;
 }
 
 .flex-box {
@@ -138,7 +129,12 @@ a {
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: space-around;
-  padding: 10px;
+  padding: 0.625rem;
+}
+
+.flex-item:hover {
+  font-family: 'Handlee', cursive;
+  font-size: 1.25rem;
 }
 
 .center-content {
@@ -149,15 +145,21 @@ ul {
   list-style-type: none;
 }
 
+li {
+  font-size: 1rem;
+  line-height: 1.5rem;
+}
+
 .biopic {
   float: left;
-  padding: 10px;
-  width: 200px;
+  padding: 0.875rem;
+  margin-right: 1rem;
+  max-width: 200px;
   display: none;
 }
 
 img {
-  padding: 10px;
+  padding: 0.875rem;
 }
 
 span {
