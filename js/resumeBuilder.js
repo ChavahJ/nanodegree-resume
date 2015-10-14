@@ -8,8 +8,8 @@ var bio = {
     "github" : "chavahj",
     "location" : "Beit Shemesh, Israel"
     },
-  "picture" : "images/197x148.gif",
-  "welcomeMessage" : "Hello! I'm looking forward to meeting you.",
+  "picture" : "images/headshot.jpg",
+  "welcomeMessage" : "&quot;Hello! I'm looking forward to meeting you.&quot;",
   "skills" : ["Creative", "Proactive", "Wordsmith", "Energetic", "Hard Working"]
 };
 
@@ -19,11 +19,11 @@ $("#header").append(formattedName);
 var formattedRole = HTMLheaderRole.replace("%data%", bio.role);
 $("#header").append(formattedRole);
 
+var formattedHTMLbioPic = HTMLbioPic.replace("%data%", bio.picture);
+$("#header").append(formattedHTMLbioPic);
+
 var formattedWelcomeMessage = HTMLwelcomeMsg.replace("%data%", bio.welcomeMessage);
 $("#header").append(formattedWelcomeMessage);
-
-// var formattedHTMLbioPic = HTMLbioPic.replace("%data%", bio.picture);
-// $("#header").append(formattedHTMLbioPic);
 
 if (bio.skills.length > 0 ) {
   $("#header").append(HTMLskillsStart);
@@ -40,9 +40,9 @@ if (bio.skills.length > 0 ) {
     $("#skills").append(formattedHTMLskills);
 }
 
-function displayBio() {
-  
-}
+// function displayBio() {
+//
+// }
 
 //Work
 var work = {
@@ -102,91 +102,100 @@ function displayWork() {
 
 displayWork();
 
-// //Projects
-// var projects = {
-//   "project" = [
-//     {
-//       "title" : "",
-//       "dates" : "",
-//       "description" : "",
-//       "images" :""
-//     },
-//     {
-//       "title" : "",
-//       "dates" : "",
-//       "description" : "",
-//       "images" :""
-//     },
-//     {
-//       "title" : "",
-//       "dates" : "",
-//       "description" : "",
-//       "images" :""
-//     },
-//     {
-//       "title" : "",
-//       "dates" : "",
-//       "description" : "",
-//       "images" :""
-//     }
-//   ]
-// }
-
-
-// //Education
-// var education = {
-//   "schools": [
-//       {
-//         "name" : "Carlsbad High School",
-//         "city" : "Carlsbad, California",
-//         "degree" : "High School Diploma",
-//         "years" : "1989 - 1993",
-//         "url" : "http://carlsbadhs.schoolloop.com/"
-//       },
-//       {
-//         "name" : "The University of California, Berkeley",
-//         "city" : "Berkeley, California",
-//         "degree" : "BA",
-//         "major" : "English Literature",
-//         "minor" : "Classical Civilizations",
-//         "years" : "1993 - 1997",
-//         "url" : "http://www.berkeley.edu/"
-//       },
-//       {
-//         "name" : "EYAHT: College for Women",
-//         "city" : "Jerusalem, Israel",
-//         "degree" : "MA",
-//         "major" : "Judaic Studies",
-//         "years" : "1998 - 2001",
-//         "url" : "https://www.eyaht.info/"
-//       }
-//   ],
-
-//   "onlineCourses": [
-//     "onlineCourse" : [
-//       {
-//         "title" : "Front End Web Development",
-//         "school" : "TeamTreehouse.com",
-//         "dates" : "February 2015 - Present",
-//         "url" : "http://teamtreehouse.com/tracks/front-end-web-development"
-//       },
-//       {
-//         "title" : "Front-End Web Developer Nanodegree",
-//         "school" : "Udacity",
-//         "dates" : "August 2015 - Present",
-//         "url" : "https://www.udacity.com/course/front-end-web-developer-nanodegree--nd001"
-//       }
-//     ]
-//   ]
-// }
-
-
-function inName(name) {
-  name = bio.name.trim().split(" ");
-  console.log(name);
-  name[1] = name[1].toUpperCase();
-  name[0] = name[0].slice(0,1).toUpperCase() + name[0].slice(1).toLowerCase();
-
-  return name[0] + " " + name[1];
+//Projects
+var projectData = {
+  "projects" : [
+    {
+      "title" : "Portfolio Site",
+      "dates" : "September 2015 - Present",
+      "description" : "I needed to create the beginning of a portfolio site for the first project in my Front-End Web Developer course at Udacity.",
+      "images" : ["images/portfolio_lg.png", "images/portfolio_sm.png"]
+    },
+    {
+      "title" : "",
+      "dates" : "",
+      "description" : "",
+      "images" :""
+    },
+    {
+      "title" : "",
+      "dates" : "",
+      "description" : "",
+      "images" :""
+    },
+    {
+      "title" : "",
+      "dates" : "",
+      "description" : "",
+      "images" :""
+    }
+  ]
 }
-$('#main').append(internationalizeButton);
+
+projectData.display = function () {
+  $("#projects").append(HTMLprojectStart);
+  for (var project in projectData.projects) {
+      var formattedProjTitle = HTMLprojectTitle.replace("%data%", projectData.projects[project].title);
+      $(".project-entry:last").append(formattedProjTitle);
+
+      var formattedProjDates = HTMLprojectDates.replace("%data%", projectData.projects[project].dates);
+      $(".project-entry:last").append(formattedProjDates);
+
+      var formattedProjDescription = HTMLprojectDescription.replace("%data%", projectData.projects[project].description);
+      $(".project-entry:last").append(formattedProjDescription);
+
+      if (projectData.projects[project].images.length > 0) {
+        for (image in projectData.projects[project].images) {
+          var formattedProjImg = HTMLprojectImage.replace("%data%", projectData.projects[project].images[image]);
+        $(".project-entry:last").append(formattedProjImg);
+        }
+      }
+  }
+}
+
+projectData.display();
+
+//Education
+var education = {
+  "schools": [
+      {
+        "name" : "Carlsbad High School",
+        "city" : "Carlsbad, California",
+        "degree" : "High School Diploma",
+        "years" : "1989 - 1993",
+        "url" : "http://carlsbadhs.schoolloop.com/"
+      },
+      {
+        "name" : "The University of California, Berkeley",
+        "city" : "Berkeley, California",
+        "degree" : "BA",
+        "major" : "English Literature",
+        "minor" : "Classical Civilizations",
+        "years" : "1993 - 1997",
+        "url" : "http://www.berkeley.edu/"
+      },
+      {
+        "name" : "EYAHT: College for Women",
+        "city" : "Jerusalem, Israel",
+        "degree" : "MA",
+        "major" : "Judaic Studies",
+        "years" : "1998 - 2001",
+        "url" : "https://www.eyaht.info/"
+      }
+  ],
+
+  "onlineCourses": [
+      {
+        "title" : "Front End Web Development",
+        "school" : "TeamTreehouse.com",
+        "dates" : "February 2015 - Present",
+        "url" : "http://teamtreehouse.com/tracks/front-end-web-development"
+      },
+      {
+        "title" : "Front-End Web Developer Nanodegree",
+        "school" : "Udacity",
+        "dates" : "August 2015 - Present",
+        "url" : "https://www.udacity.com/course/front-end-web-developer-nanodegree--nd001"
+      }
+    ]
+}

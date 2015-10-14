@@ -5,12 +5,14 @@
 #0095da - light blue
 **********/
 
-
-
 body {
   padding: 0;
-  margin: 0;
   font-family: 'Montserrat', sans-serif;
+}
+
+#main {
+  max-width: 1366px;
+  margin: 0 auto;
 }
 
 .clear-fix {
@@ -56,6 +58,10 @@ h4 {
   padding: 0.625rem 5%;
 }
 
+.role {
+  display: inline-block;
+}
+
 .date-text {
   font-size: 0.875rem;
   color: #0066b3;
@@ -68,7 +74,6 @@ h4 {
   color: #0066b3;
   line-height: 1rem;
   float: right;
-
 }
 
 p {
@@ -85,13 +90,15 @@ a {
 }
 
 .welcome-message {
-  font-size: 1.25rem;
+  font: bold 1.6rem/2rem 'Handlee', cursive;
   color: #00427a;
-  line-height: 1.75rem;
+  padding-top: 1rem;
 }
 
 #skills-h3 {
+  font-family: 'Montserrat', sans-serif;
   color: #00427a;
+  text-align: center;
   display: none;
 }
 
@@ -113,10 +120,6 @@ a {
   padding-bottom: 0.625rem;
   clear:both;
 }
-
-/*.light-gray {
-  background-color: #444;
-}*/
 
 /* TODO: Replace with image later */
 #header {
@@ -143,6 +146,7 @@ a {
 
 ul {
   list-style-type: none;
+  margin: 5px;
 }
 
 li {
@@ -152,14 +156,11 @@ li {
 
 .biopic {
   float: left;
-  padding: 0.875rem;
   margin-right: 1rem;
   max-width: 200px;
   display: none;
-}
-
-img {
-  padding: 0.875rem;
+  border-radius: 5%;
+  border: 5px solid white;
 }
 
 span {
