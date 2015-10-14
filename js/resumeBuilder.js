@@ -79,7 +79,7 @@ var work = {
 }
 
 function displayWork() {
-  for (job in work.jobs) {
+  for (var job in work.jobs) {
     //create new div for work experience
     $("#workExperience").append(HTMLworkStart);
 
@@ -106,28 +106,16 @@ displayWork();
 var projectData = {
   "projects" : [
     {
-      "title" : "Portfolio Site",
-      "dates" : "September 2015 - Present",
-      "description" : "I needed to create the beginning of a portfolio site for the first project in my Front-End Web Developer course at Udacity.",
-      "images" : ["images/portfolio_lg.png", "images/portfolio_sm.png"]
+      "title" : "Sample Project One",
+      "dates" : "January 2016 - May 2016",
+      "description" : "I want to create a website for my mother-in-law, showcasing all her healing skills, including: reflexology, aromatherapy, energy healing, and therapeutic  massage. This is not an eCommerce site, but more of a calling card for her to share with potential clients.",
+      "images" : ["http://placehold.it/300x200", "http://placehold.it/300x200", "http://placehold.it/300x200"]
     },
     {
-      "title" : "",
-      "dates" : "",
-      "description" : "",
-      "images" :""
-    },
-    {
-      "title" : "",
-      "dates" : "",
-      "description" : "",
-      "images" :""
-    },
-    {
-      "title" : "",
-      "dates" : "",
-      "description" : "",
-      "images" :""
+      "title" : "Sample Project Two",
+      "dates" : "April 2016 - September 2016",
+      "description" : "My husband, in a moment of guilt, offered my website building services to his father — seeing as I was building a website for his mother. In order to preserve peace in the family, I made a website providing details about his musical band.",
+      "images" : ["http://placehold.it/300x200", "http://placehold.it/300x200", "http://placehold.it/300x200"]
     }
   ]
 }
@@ -161,8 +149,8 @@ var education = {
       {
         "name" : "Carlsbad High School",
         "city" : "Carlsbad, California",
-        "degree" : "High School Diploma",
-        "years" : "1989 - 1993",
+        "degree" : "Diploma",
+        "dates" : "1989 - 1993",
         "url" : "http://carlsbadhs.schoolloop.com/"
       },
       {
@@ -171,7 +159,7 @@ var education = {
         "degree" : "BA",
         "major" : "English Literature",
         "minor" : "Classical Civilizations",
-        "years" : "1993 - 1997",
+        "dates" : "1993 - 1997",
         "url" : "http://www.berkeley.edu/"
       },
       {
@@ -179,7 +167,7 @@ var education = {
         "city" : "Jerusalem, Israel",
         "degree" : "MA",
         "major" : "Judaic Studies",
-        "years" : "1998 - 2001",
+        "dates" : "1998 - 2001",
         "url" : "https://www.eyaht.info/"
       }
   ],
@@ -199,3 +187,34 @@ var education = {
       }
     ]
 }
+
+education.display = function () {
+  $("#education").append(HTMLschoolStart);
+  for (var school in education.schools) {
+    var formattedSchoolName = HTMLschoolName.replace("#", education.schools[school].url) + ("%data%", education.schools[school].name);
+    $(".education-entry:last").append(formattedSchoolName);
+
+    var formattedDegree = HTMLschoolDegree.replace("%data%", education.schools[school].degree);
+    $(".education-entry:last").append(formattedDegree);
+
+    var formattedSchoolDates = HTMLschoolDates.replace("%data%", education.schools[school].dates);
+    $(".education-entry:last").append(formattedSchoolDates);
+
+    var formattedSchoolCity = HTMLschoolLocation.replace("%data%", education.schools[school].city);
+    $(".education-entry:last").append(formattedSchoolCity);
+
+    if (education.schools[school].major) {
+      var formattedMajor = HTMLschoolMajor.replace("%data%", education.schools[school].major);
+      $(".education-entry:last").append(formattedMajor);
+    }
+
+    if (education.schools[school].minor) {
+      var formattedMinor = HTMLschoolMinor.replace("%data%", education.schools[school].minor);
+      $(".education-entry:last").append(formattedMinor);
+    }
+  }
+}
+
+education.display();
+
+$("#mapDiv").append(googleMap);

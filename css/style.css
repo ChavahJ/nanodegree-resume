@@ -19,10 +19,15 @@ body {
   overflow: auto;
 }
 
-.education-entry,
 .work-entry,
 .project-entry {
   font-size: 1.25rem;
+  padding: 0 5%;
+}
+
+.education-entry {
+  font-size: 1rem;
+  line-height: 1.5rem;
   padding: 0 5%;
 }
 
@@ -63,9 +68,9 @@ h4 {
 }
 
 .date-text {
-  font-size: 0.875rem;
+  font-size: 1rem;
   color: #0066b3;
-  line-height: 1rem;
+  line-height: 1.5rem;
   float: left;
 }
 
@@ -161,6 +166,11 @@ li {
   display: none;
   border-radius: 5%;
   border: 5px solid white;
+}
+
+.projpic {
+  padding: 10px;
+  margin: 10px;
 }
 
 span {
