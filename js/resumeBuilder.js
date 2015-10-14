@@ -1,7 +1,7 @@
 //Biography
 var bio = {
   "name": "Chavah Jacobs",
-  "role" : "Web Developer",
+  "role" : "UX Content Strategist",
   "contacts": {
     "email" : "elynchav@gmail.com",
     "mobile" : "054-220-1419",
@@ -141,7 +141,7 @@ displayWork();
 //         "city" : "Carlsbad, California",
 //         "degree" : "High School Diploma",
 //         "years" : "1989 - 1993",
-//         "url" : ""
+//         "url" : "http://carlsbadhs.schoolloop.com/"
 //       },
 //       {
 //         "name" : "The University of California, Berkeley",
@@ -150,7 +150,15 @@ displayWork();
 //         "major" : "English Literature",
 //         "minor" : "Classical Civilizations",
 //         "years" : "1993 - 1997",
-//         "url" : ""
+//         "url" : "http://www.berkeley.edu/"
+//       },
+//       {
+//         "name" : "EYAHT: College for Women",
+//         "city" : "Jerusalem, Israel",
+//         "degree" : "MA",
+//         "major" : "Judaic Studies",
+//         "years" : "1998 - 2001",
+//         "url" : "https://www.eyaht.info/"
 //       }
 //   ],
 
