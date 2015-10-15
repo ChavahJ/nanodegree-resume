@@ -1,74 +1,78 @@
 /**********Color Scheme
-#00427a - dark blue
-#71c5ef - sky blue
-#0066b3 - royal blue
-#0095da - light blue
+#57102c dark red-pink
+#4ca8a1 teal
+#7ec2aa light teal
+#a92159 pink
 **********/
-
-
 
 body {
   padding: 0;
-  margin: 0;
   font-family: 'Montserrat', sans-serif;
+}
+
+#main {
+  max-width: 1366px;
+  margin: 0 auto;
 }
 
 .clear-fix {
   overflow: auto;
 }
 
-.education-entry,
 .work-entry,
 .project-entry {
+  color: rgb(51,51,51);
   font-size: 1.25rem;
   padding: 0 5%;
 }
 
+.education-entry {
+  color: rgb(51,51,51);
+  font-size: 1rem;
+  line-height: 1.5rem;
+  padding: 0 5%;
+  margin-bottom: 20px;
+}
+
 h1 {
-  color: #00427a;
-  font-family: 'Handlee', cursive;
-  font-size: 2.5rem;
-  line-height: 3rem;
+  color: #a92159;
+  font: bold 3rem/3.5rem 'Handlee', cursive;
   display: inline;
 }
 
 h2 {
-  color: #00427a;
-  font-family: 'Handlee', cursive;
-  font-size: 1.5rem;
-  line-height: 1.8125rem;
+  font: bold 1.6rem/2rem 'Montserrat', sans-serif;
+  color: white;
   padding: 0.625rem 5%;
-}
-
-h3 {
-  color: #00427a;
-  font-family: 'Handlee', cursive;
-  font-size: 1.25rem;
-  line-height: 1.375rem;
-  padding: 0.625rem 5%;
+  background-color: #7ec2aa;
+  text-align: center;
+  margin-top: 1px;
 }
 
 h4 {
-  color: #00427a;
+  color: #a92159;
   font-family: 'Handlee', cursive;
   font-size: 0.875rem;
   line-height: 1.0625rem;
   padding: 0.625rem 5%;
 }
 
+.role {
+  display: inline-block;
+}
+
 .date-text {
-  font-size: 0.875rem;
-  color: #0066b3;
-  line-height: 1rem;
+  font-size: 1rem;
+  color: #a92159;
+  line-height: 1.5rem;
   float: left;
 }
 
 .location-text {
   font-size: 0.875rem;
-  color: #0066b3;
+  color: #a92159;
   line-height: 1rem;
   float: right;
-
 }
 
 p {
@@ -77,50 +81,44 @@ p {
 }
 
 a {
-  color: #00427a;
+  color: inherit;
   font-weight: bold;
   text-decoration: none;
-  margin-top: 0.625rem;
-  display: block;
+  margin-top: 10px;
+  display:  block;
 }
 
 .welcome-message {
-  font-size: 1.25rem;
-  color: #00427a;
-  line-height: 1.75rem;
+  font: bold 1.6rem/2rem 'Handlee', cursive;
+  color: #a92159;
+  padding-top: 1rem;
+  display: block;
 }
 
 #skills-h3 {
-  color: #00427a;
+  font-family: 'Montserrat', sans-serif;
+  color: rgb(51,51,51);
+  text-align: center;
   display: none;
 }
 
-.blue {
-  background-color: #00427a;
-}
-
 .blue-text {
-  color: #00427a;
-}
-
-.white-text {
-  font-weight: bold;
-  color: #fff;
+  color: #a92159;
 }
 
 .sky-blue {
-  background-color: #71c5ef;
+  background-color: #4ca8a1;
   padding-bottom: 0.625rem;
   clear:both;
 }
 
-/*.light-gray {
-  background-color: #444;
-}*/
+.listContact {
+  display: inline-block;
+}
 
 /* TODO: Replace with image later */
 #header {
-  background-color: #0095da;
+  background-color: #4ca8a1;
 }
 
 .flex-box {
@@ -143,6 +141,7 @@ a {
 
 ul {
   list-style-type: none;
+  margin: 5px;
 }
 
 li {
@@ -152,14 +151,16 @@ li {
 
 .biopic {
   float: left;
-  padding: 0.875rem;
   margin-right: 1rem;
   max-width: 200px;
   display: none;
+  border-radius: 5%;
+  border: 5px solid white;
 }
 
-img {
-  padding: 0.875rem;
+.projpic {
+  padding: 10px;
+  margin: 10px;
 }
 
 span {
@@ -168,6 +169,8 @@ span {
 
 #lets-connect {
   text-align: center;
+  margin-top: 20px;
+  background-color: #4ca8a1;
 }
 
 /* Media queries to handle various device widths */
@@ -213,4 +216,9 @@ span {
   .biopic {
     display: block;
   }
+}
+
+.white-text {
+  font-weight: bold;
+  color: #fff;
 }
