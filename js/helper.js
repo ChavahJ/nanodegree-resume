@@ -7,12 +7,12 @@ var HTMLbioPic = '<img src="%data%" class="biopic">';
 var HTMLheaderRole = '<span class="white-text role">%data%</span><hr/>';
 
 var HTMLcontactGeneric = '<li class="flex-item"><span class="blue-text">%contact%</span><span class="white-text">%data%</span></li>';
-var HTMLmobile = '<li class="flex-item"><span class="blue-text">mobile</span><span class="white-text">%data%</span></li>';
-var HTMLemail = '<li class="flex-item"><span class="blue-text">email</span><span class="white-text">%data%</span></li>';
-// var HTMLtwitter = '<li class="flex-item"><span class="blue-text">twitter</span><span class="white-text">%data%</span></li>';
-var HTMLgithub = '<li class="flex-item"><span class="blue-text">github</span><span class="white-text">%data%</span></li>';
-var HTMLblog = '<li class="flex-item"><span class="blue-text">blog</span><span class="white-text">%data%</span></li>';
-var HTMLlocation = '<li class="flex-item"><span class="blue-text">location</span><span class="white-text">%data%</span></li>';
+var HTMLmobile = '<li class="flex-item"><span class="blue-text">Mobile</span><span class="white-text">%data%</span></li>';
+var HTMLemail = '<li class="flex-item"><span class="blue-text">Email</span><span class="white-text">%data%</span></li>';
+var HTMLlinkedIn = '<li class="flex-item"><span class="blue-text">LinkedIn</span><span class="white-text">%data%</span></li>';
+var HTMLgithub = '<li class="flex-item"><span class="blue-text">GitHub</span><span class="white-text">%data%</span></li>';
+// var HTMLblog = '<li class="flex-item"><span class="blue-text">Blog</span><span class="white-text">%data%</span></li>';
+var HTMLlocation = '<li class="flex-item"><span class="blue-text">Location</span><span class="white-text">%data%</span></li>';
 
 var HTMLbioPic = '<img src="%data%" class="biopic">';
 var HTMLwelcomeMsg = '<span class="welcome-message">%data%</span>';
@@ -21,8 +21,8 @@ var HTMLskillsStart = '<h3 id="skills-h3">Skills at a Glance:</h3><ul id="skills
 var HTMLskills = '<li class="flex-item"><span class="white-text">%data%</span></li>';
 
 var HTMLworkStart = '<div class="work-entry"></div>';
-var HTMLworkEmployer = '<a href="#">%data%';
-var HTMLworkTitle = ' — %data%</a>';
+var HTMLworkEmployer = '<span class="welcome-message">%data%';
+var HTMLworkTitle = ' — %data%</span>';
 var HTMLworkDates = '<div class="date-text">%data%</div>';
 var HTMLworkLocation = '<div class="location-text">%data%</div>';
 var HTMLworkDescription = '<p><br>%data%</p>';
@@ -74,56 +74,31 @@ $(document).click(function(loc) {
 
 
 /*
-This is the fun part. Here's where we generate the custom Google Map for the website.
-See the documentation below for more details.
 https://developers.google.com/maps/documentation/javascript/reference
 */
-var map;    // declares a global map variable
-
-
-/*
-Start here! initializeMap() is called when page is loaded.
-*/
+var map;
 function initializeMap() {
-
   var locations;
-
   var mapOptions = {
     disableDefaultUI: true
   };
 
-  /*
-  For the map to be displayed, the googleMap var must be
-  appended to #mapDiv in resumeBuilder.js.
-  */
   map = new google.maps.Map(document.querySelector('#map'), mapOptions);
 
-
-  /*
-  locationFinder() returns an array of every location string from the JSONs
-  written for bio, education, and work.
-  */
   function locationFinder() {
     var locations = [];
-
     locations.push(bio.contacts.location);
-
-    for (var school in education.schools) {
+      for (var school in education.schools) {
       locations.push(education.schools[school].city);
-    }
+      }
 
-    for (var job in work.jobs) {
+      for (var job in work.jobs) {
       locations.push(work.jobs[job].location);
-    }
+      }
 
     return locations;
   }
 
-  /*
-  createMapMarker(placeData) reads Google Places search results to create map pins.
-  placeData is the object returned from search results containing information
-  about a single location.
-  */
   function createMapMarker(placeData) {
 
     // The next lines save location data from the search result object to local variables
@@ -139,9 +114,6 @@ function initializeMap() {
       title: name
     });
 
-    // infoWindows are the little helper windows that open when you click
-    // or hover over a pin on a map. They usually contain more information
-    // about a location.
     var infoWindow = new google.maps.InfoWindow({
       content: name
     });
