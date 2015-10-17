@@ -9,7 +9,7 @@ var bio = {
     "linkedIn" : "<a class='listContact' href='https://il.linkedin.com/pub/chavah-jacobs/49/b99/aa'>Chavah-Jacobs</a>",
     "location" : "Beit Shemesh, Israel"
     },
-  "picture" : "images/headshot.jpg",
+  "picture" : "/images/headshot.jpg",
   "welcomeMessage" : "&quot;I love people, writing, and website coding. How can I help you?&quot;",
   "skills" : ["Creative", "Proactive", "Wordsmith", "Energetic", "Hard Working"]
 };
