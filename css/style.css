@@ -37,7 +37,8 @@ body {
 h1 {
   color: #a92159;
   font: bold 3rem/3.5rem 'Handlee', cursive;
-  display: inline;
+  display: inline-block;
+  margin: .5rem;
 }
 
 h2 {
@@ -47,6 +48,12 @@ h2 {
   background-color: #7ec2aa;
   text-align: center;
   margin-top: 1px;
+}
+
+h3 {
+  font: bold 1.5rem/1.75rem 'Handlee', cursive;
+  color: #a92159;
+  margin: 1rem 1rem 1rem 0;
 }
 
 h4 {
@@ -62,22 +69,20 @@ h4 {
 }
 
 .date-text {
-  font-size: 1rem;
+  font: 1rem/1.5rem 'Montserrat', sans-serif;
   color: #a92159;
-  line-height: 1.5rem;
   float: left;
 }
 
 .location-text {
-  font-size: 0.875rem;
+  font: .875rem/1rem 'Montserrat', sans-serif;
   color: #a92159;
-  line-height: 1rem;
   float: right;
 }
 
 p {
-  font-size: 0.875rem;
-  line-height: 1rem;
+  font-size: 1rem;
+  line-height: 1.25rem;
 }
 
 a {
@@ -89,9 +94,9 @@ a {
 }
 
 .welcome-message {
-  font: bold 1.6rem/2rem 'Handlee', cursive;
+  font: bold 1.75rem/2rem 'Handlee', cursive;
   color: #a92159;
-  padding-top: 1rem;
+  padding: 2rem;
   display: block;
 }
 
@@ -102,21 +107,19 @@ a {
   display: none;
 }
 
-.blue-text {
+.pink-text {
   color: #a92159;
 }
 
-.sky-blue {
-  background-color: #4ca8a1;
-  padding-bottom: 0.625rem;
-  clear:both;
+.white-text {
+  font-weight: bold;
+  color: #fff;
 }
 
 .listContact {
   display: inline-block;
 }
 
-/* TODO: Replace with image later */
 #header {
   background-color: #4ca8a1;
 }
@@ -127,7 +130,7 @@ a {
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: space-around;
-  padding: 0.625rem;
+  padding: .75rem;
 }
 
 .flex-item:hover {
@@ -136,7 +139,7 @@ a {
 }
 
 .center-content {
-  padding: 2.5% 5%;
+  padding: 2.5%;
 }
 
 ul {
@@ -151,8 +154,8 @@ li {
 
 .biopic {
   float: left;
-  margin-right: 1rem;
-  max-width: 200px;
+  margin: 1rem 2rem 1rem 0;
+  max-width: 50%;
   display: none;
   border-radius: 5%;
   border: 5px solid white;
@@ -164,7 +167,13 @@ li {
 }
 
 span {
-  padding: 5px;
+  padding: 10px;
+  display: inline-block;
+}
+
+.courseURl {
+  margin-top: 1px;
+  font-weight: normal;
 }
 
 #lets-connect {
@@ -173,42 +182,60 @@ span {
   background-color: #4ca8a1;
 }
 
-/* Media queries to handle various device widths */
-
-@media only screen and (max-width: 1024px) {
-  #lets-connect {
-    margin-top: 5%;
-  }
-}
-
-@media only screen and (max-width:900px) {
-  .biopic {
-    width: 175px;
-  }
-}
-
-@media only screen and (max-width: 750px) {
-  #lets-connect {
-    margin-top: 10%;
-  }
-  .biopic {
-    width: 150px;
-  }
-  .welcome-message {
-    display: none;
-  }
-}
-
 #map {
   display: block;
   height: 100%;
-  margin: 0 5%;
+  margin: 0 10%;
 }
 
 #mapDiv {
   height: 400px;
   width: 100%;
   padding-bottom: 5%;
+}
+
+/* Media queries to handle various device widths */
+
+@media only screen and (min-width: 769px) and (max-width: 1170px) {
+  #lets-connect {
+    margin-top: 5%;
+  }
+
+  h1 {
+    margin: 5px;
+  }
+
+  .projpic {
+    padding: 5px;
+    margin: 5px;
+    width: 30%;
+    width: calc(30%);
+  }
+
+  .biopic {
+    margin: 1rem 2rem 2rem 0;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  #lets-connect {
+    margin-top: 10%;
+  }
+  .biopic {
+    width: 150px;
+  }
+
+  .welcome-message {
+    display: none;
+  }
+
+  p {
+    padding: 3% 0;
+  }
+
+  #mapDiv {
+    height: 350px;
+  }
 }
 
 @media only screen and (min-width: 750px) {
@@ -218,7 +245,32 @@ span {
   }
 }
 
-.white-text {
-  font-weight: bold;
-  color: #fff;
+@media only screen and (max-width: 587px){
+  #name,
+  .role,
+  .flex-item {
+    text-align: center !important;
+  }
+
+  #name,
+  .role {
+    display: block;
+  }
+
+  p {
+    padding: 5% 0;
+  }
+
+  .work-entry,
+  .project-entry {
+    padding: 7.5%;
+  }
+
+  .flex-item {
+    padding: 5px;
+  }
+
+  #mapDiv {
+    overflow: auto;
+  }
 }

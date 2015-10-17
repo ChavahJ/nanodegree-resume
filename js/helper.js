@@ -1,18 +1,13 @@
-/*
-These are HTML strings. As part of the course, you'll be using JavaScript functions
-replace the %data% placeholder text you see in them.
-*/
+
 var HTMLheaderName = '<h1 id="name">%data%</h1>';
 var HTMLbioPic = '<img src="%data%" class="biopic">';
 var HTMLheaderRole = '<span class="white-text role">%data%</span><hr/>';
 
-var HTMLcontactGeneric = '<li class="flex-item"><span class="blue-text">%contact%</span><span class="white-text">%data%</span></li>';
-var HTMLmobile = '<li class="flex-item"><span class="blue-text">Mobile</span><span class="white-text">%data%</span></li>';
-var HTMLemail = '<li class="flex-item"><span class="blue-text">Email</span><span class="white-text">%data%</span></li>';
-var HTMLlinkedIn = '<li class="flex-item"><span class="blue-text">LinkedIn</span><span class="white-text">%data%</span></li>';
-var HTMLgithub = '<li class="flex-item"><span class="blue-text">GitHub</span><span class="white-text">%data%</span></li>';
-// var HTMLblog = '<li class="flex-item"><span class="blue-text">Blog</span><span class="white-text">%data%</span></li>';
-var HTMLlocation = '<li class="flex-item"><span class="blue-text">Location</span><span class="white-text">%data%</span></li>';
+var HTMLmobile = '<li class="flex-item"><span class="pink-text">Mobile</span><span class="white-text">%data%</span></li>';
+var HTMLemail = '<li class="flex-item"><span class="pink-text">Email</span><span class="white-text">%data%</span></li>';
+var HTMLlinkedIn = '<li class="flex-item"><span class="pink-text">LinkedIn</span><span class="white-text">%data%</span></li>';
+var HTMLgithub = '<li class="flex-item"><span class="pink-text">GitHub</span><span class="white-text">%data%</span></li>';
+var HTMLlocation = '<li class="flex-item"><span class="pink-text">Location</span><span class="white-text">%data%</span></li>';
 
 var HTMLbioPic = '<img src="%data%" class="biopic">';
 var HTMLwelcomeMsg = '<span class="welcome-message">%data%</span>';
@@ -41,11 +36,11 @@ var HTMLschoolLocation = '<div class="location-text">%data%</div>';
 var HTMLschoolMajor = '<br>Major: %data%';
 var HTMLschoolMinor = '<br>Minor: %data%';
 
-var HTMLonlineClasses = '<h3>Online Classes</h3>';
+var HTMLonlineClasses = '<div class="education-entry"><h3>Online Classes</h3></div>';
 var HTMLonlineTitle = '<a href="#" target="_blank">%data%';
 var HTMLonlineSchool = ' — %data%</a>';
 var HTMLonlineDates = '<div class="date-text">%data%</div>';
-var HTMLonlineURL = '<br><a href="#">%data%</a>';
+var HTMLonlineURL = '<br><a class="courseURl" href="#">%data%</a>';
 
 var googleMap = '<div id="map"></div>';
 
