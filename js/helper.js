@@ -1,3 +1,6 @@
+// Whole-script strict mode syntax
+"use strict";
+
 var HTMLheaderName = '<h1 id="name">%data%</h1>';
 var HTMLbioPic = '<img src="%data%" class="biopic">';
 var HTMLheaderRole = '<span class="white-text role">%data%</span><hr/>';
@@ -46,7 +49,7 @@ var googleMap = '<div id="map"></div>';
 /*
 The next few lines about clicks are for the Collecting Click Locations quiz in Lesson 2.
 */
-clickLocations = [];
+var clickLocations = [];
 
 function logClicks(x, y) {
     clickLocations.push({
