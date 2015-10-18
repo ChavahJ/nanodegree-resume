@@ -1,3 +1,6 @@
+// Whole-script strict mode syntax
+"use strict";
+
 //Biography
 var bio = {
     "name": "Chavah Jacobs",
@@ -71,7 +74,7 @@ var work = {
     }]
 };
 
-function displayWork() {
+work.display = function() {
     for (var job in work.jobs) {
         if (work.jobs[job]) {
             $("#workExperience").append(HTMLworkStart);
@@ -91,9 +94,10 @@ function displayWork() {
             $(".work-entry:last").append(formattedWorkDescription);
         }
     }
-}
+  }
 
-displayWork();
+
+work.display();
 
 //Projects
 var projectData = {
