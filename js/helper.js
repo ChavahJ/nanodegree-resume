@@ -1,14 +1,11 @@
-// Whole-script strict mode syntax
-"use strict";
-
 var HTMLheaderName = '<h1 id="name">%data%</h1>';
 var HTMLbioPic = '<img src="%data%" class="biopic">';
 var HTMLheaderRole = '<span class="white-text role">%data%</span><hr/>';
 
-var HTMLmobile = '<li class="flex-item"><span class="pink-text">Mobile</span><span class="white-text">%data%</span></li>';
-var HTMLemail = '<li class="flex-item"><span class="pink-text">Email</span><span class="white-text">%data%</span></li>';
-var HTMLlinkedIn = '<li class="flex-item"><span class="pink-text">LinkedIn</span><span class="white-text">%data%</span></li>';
-var HTMLgithub = '<li class="flex-item"><span class="pink-text">GitHub</span><span class="white-text">%data%</span></li>';
+var HTMLmobile = '<li class="flex-item"><span class="pink-text">Mobile</span><span class="white-text"><a class="listContact" href="tel: #">%data%</a></span></li>';
+var HTMLemail = '<li class="flex-item"><span class="pink-text">Email</span><span class="white-text"><a class="listContact" href="mailto: #?Subject=I%20saw%20your%20awesome%20resume,%20and%20want%20to%20give%20you%20lots%20of%20money%20to%20work%20for%20me">%data%</a></span></li>';
+var HTMLlinkedIn = '<li class="flex-item"><span class="pink-text">LinkedIn</span><span class="white-text"><a class="listContact" href="#" target="_blank">%data%</a></span></li>';
+var HTMLgithub = '<li class="flex-item"><span class="pink-text">GitHub</span><span class="white-text"><a class="listContact" href="#" target="_blank">%data%</a></span></li>';
 var HTMLlocation = '<li class="flex-item"><span class="pink-text">Location</span><span class="white-text">%data%</span></li>';
 
 var HTMLbioPic = '<img src="%data%" class="biopic">';
@@ -42,7 +39,7 @@ var HTMLonlineClasses = '<div class="education-entry"><h3>Online Classes</h3></d
 var HTMLonlineTitle = '<a href="#" target="_blank">%data%';
 var HTMLonlineSchool = ' — %data%</a>';
 var HTMLonlineDates = '<div class="date-text">%data%</div>';
-var HTMLonlineURL = '<br><a class="courseURl" href="#">%data%</a>';
+var HTMLonlineURL = '<br><a class="courseURl" href="#" target="_blank>%data%</a>';
 
 var googleMap = '<div id="map"></div>';
 
@@ -120,7 +117,7 @@ function initializeMap() {
         });
 
         google.maps.event.addListener(marker, 'click', function() {
-          infoWindow.open(map, marker);
+            infoWindow.open(map, marker);
         });
 
         // this is where the pin actually gets added to the map.

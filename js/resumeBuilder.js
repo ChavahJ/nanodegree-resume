@@ -1,15 +1,14 @@
-// Whole-script strict mode syntax
-"use strict";
-
 //Biography
 var bio = {
     "name": "Chavah Jacobs",
     "role": "UX Content Strategist",
     "contacts": {
-        "email": "<a class='listContact' href='mailto: elynchav@gmail.com?Subject=I%20saw%20your%20awesome%20resume,%20and%20want%20to%20give%20you%20lots%20of%20money%20to%20work%20for%20me'>elynchav@gmail.com</a>",
-        "mobile": "<a class='listContact' href='tel: 972-54-220-1419'>054-220-1419</a>",
-        "github": "<a class='listContact' href='https://github.com/ChavahJ' target='_blank'>ChavahJ</a>",
-        "linkedIn": "<a class='listContact' href='https://il.linkedin.com/pub/chavah-jacobs/49/b99/aa' target='_blank'>Chavah-Jacobs</a>",
+        "email": "elynchav@gmail.com",
+        "mobile": "054-220-1419",
+        "github": "ChavahJ</a>",
+        "githubURL": "https://github.com/ChavahJ",
+        "linkedIn": "Chavah-Jacobs",
+        "linkedInURL": "https://il.linkedin.com/pub/chavah-jacobs/49/b99/aa",
         "location": "Beit Shemesh, Israel"
     },
     "picture": "images/headshot.JPG",
@@ -36,20 +35,18 @@ bio.display = function() {
         }
     }
 
-    var formattedHTMLmobile = HTMLmobile.replace("%data%", bio.contacts.mobile);
+    var formattedHTMLmobile = HTMLmobile.replace("#", bio.contacts.mobile).replace("%data%", bio.contacts.mobile);
     $("#topContacts,#footerContacts").append(formattedHTMLmobile);
 
-    var formattedHTMLemail = HTMLemail.replace("%data%", bio.contacts.email);
+    var formattedHTMLemail = HTMLemail.replace("#", bio.contacts.email).replace("%data%", bio.contacts.email);
     $("#topContacts,#footerContacts").append(formattedHTMLemail);
 
-    var formattedHTMLgithub = HTMLgithub.replace("%data%", bio.contacts.github);
+    var formattedHTMLgithub = HTMLgithub.replace("#", bio.contacts.githubURL).replace("%data%", bio.contacts.github);
     $("#topContacts,#footerContacts").append(formattedHTMLgithub);
 
-    var formattedHTMLlinkedIn = HTMLlinkedIn.replace("%data%", bio.contacts.linkedIn);
+    var formattedHTMLlinkedIn = HTMLlinkedIn.replace("#", bio.contacts.linkedInURL).replace("%data%", bio.contacts.linkedIn);
     $("#topContacts,#footerContacts").append(formattedHTMLlinkedIn);
 };
-
-bio.display();
 
 //Work
 var work = {
@@ -94,10 +91,7 @@ work.display = function() {
             $(".work-entry:last").append(formattedWorkDescription);
         }
     }
-  }
-
-
-work.display();
+};
 
 //Projects
 var projectData = {
@@ -138,8 +132,6 @@ projectData.display = function() {
         }
     }
 };
-
-projectData.display();
 
 //Education
 var education = {
@@ -226,6 +218,9 @@ education.display = function() {
     }
 };
 
+bio.display();
+work.display();
+projectData.display();
 education.display();
 
 $("#mapDiv").append(googleMap);
