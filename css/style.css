@@ -96,7 +96,7 @@ a {
 .welcome-message {
   font: bold 1.75rem/2rem 'Handlee', cursive;
   color: #a92159;
-  padding: 2rem;
+  padding: 2rem 2rem 2rem 0;
   display: block;
 }
 

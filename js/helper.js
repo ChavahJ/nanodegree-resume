@@ -96,6 +96,7 @@ function initializeMap() {
         return locations;
     }
 
+
     function createMapMarker(placeData) {
 
         // The next lines save location data from the search result object to local variables
