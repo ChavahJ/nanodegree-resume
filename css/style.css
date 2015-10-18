@@ -90,7 +90,7 @@ a {
   font-weight: bold;
   text-decoration: none;
   margin-top: 10px;
-  display:  block;
+  display: block;
 }
 
 .welcome-message {
@@ -214,13 +214,14 @@ span {
 
   .biopic {
     margin: 1rem 2rem 2rem 0;
-  }
+  };
 }
 
 @media only screen and (max-width: 768px) {
   #lets-connect {
     margin-top: 10%;
   }
+
   .biopic {
     width: 150px;
   }
@@ -235,17 +236,17 @@ span {
 
   #mapDiv {
     height: 350px;
-  }
+  };
 }
 
 @media only screen and (min-width: 750px) {
   #skills-h3,
   .biopic {
     display: block;
-  }
+  };
 }
 
-@media only screen and (max-width: 587px){
+@media only screen and (max-width: 587px) {
   #name,
   .role,
   .flex-item {
@@ -272,5 +273,5 @@ span {
 
   #mapDiv {
     overflow: auto;
-  }
+  };
 }
