@@ -1,7 +1,7 @@
 //Biography
 var bio = {
     "name": "Chavah Jacobs",
-    "role": "UX Content Strategist",
+    "role": "UX Developer",
     "contacts": {
         "email": "elynchav@gmail.com",
         "mobile": "054-220-1419",
@@ -12,8 +12,8 @@ var bio = {
         "location": "Beit Shemesh, Israel"
     },
     "picture": "images/headshot.JPG",
-    "welcomeMessage": "&quot;I love people, writing, and website coding. How can I help you?&quot;",
-    "skills": ["Creative", "Proactive", "Wordsmith", "Energetic", "Hard Working"]
+    "welcomeMessage": "&quot;I love people, writing, and front-end development. How can I help you?&quot;",
+    "skills": ["Creative", "Proactive", "Wordsmith", "Passionate", "Hard Working"]
 };
 
 bio.display = function() {
@@ -51,23 +51,29 @@ bio.display = function() {
 //Work
 var work = {
     "jobs": [{
-        "employer": "SIS Resources, Inc",
-        "title": "UX Content Strategist",
+        "employer": "Nu Mark Innovations",
+        "title": "UX Developer",
         "location": "Beit Shemesh, Israel",
-        "dates": "June 2014-Present",
-        "description": "Responsible for creating content for eCommerce platforms. My main works goals are to maximize the user experience (UX), and always keep SEO best practices in mind. I have been working with Git (version control), and creating responsive website pages using a combination of HTML, CSS, Bootstrap, Smarty templates, and basic PHP. Also, I have been fixing coding errors, and working on the sites' Information Architecture."
+        "dates": "February 2015-Present",
+        "description": "I have been creating website pages using mainly HTML, CSS, and Javascript, with a smattering of PHP here and there. I use Git extensively on a daily basis, love it, and have mastered resolving merge conflicts. While I enjoy building new pages, I also have a passion for performance optimization with legacy code. I'm an ardent advocate of a mobile-first approach to design and development, and believe in finding the most simple, clean manner of executing any project. Finally, I work closely with our SEO manager, on our sites' information architecture, including meta information, URL optimization, and fixing broken assets or links."
     }, {
+        "employer": "Nu Mark Innovations",
+        "title": "Marketing Communications Specialist",
+        "location": "Beit Shemesh, Israel",
+        "dates": "April 2014-February 2015",
+        "description": "SIS Resources, Inc was purchased by Altria, and ultimately became Nu Mark Innovations. I was responsible for writing, editing, and updating content across multiple websites, blogs, and social media sites. I wrote copy for email campaigns, product packaging, user manuals, video scripts, tweets, Facebook posts, and slideshow presentations. Additionally, I coordinated with third-party vendors (for SEO and content marketing needs). In addtion to writing for eCommerce platforms, I also wrote copy for retail marketing and internal departments, such as Human Resources."
+    },{
         "employer": "SIS Resources, Inc",
         "title": "Customer Service Manager",
         "location": "Beit Shemesh, Israel",
-        "dates": "Jan 2011-June 2014",
+        "dates": "January 2011-April 2014",
         "description": "I organized the schedule for the customer service department and tracked employee performance (while on the shift).  I successfully appeased and solved problems for upset, confrontational customers — I was the person angry customers got when they wanted to speak to a manager.  Also, I managed fraud/age verification for customer accounts.  I did the initial screening and first interviews for new employees, and trained them.  I created and maintained an internal blog for the department.  Finally, I created a training curriculum, including mapping processes, producing training videos, and working on a training manual."
     }, {
         "employer": "Freelance",
         "title": "Content Writer",
         "location": "Beit Shemesh, Israel",
         "dates": "Apr 2001-Dec 2010",
-        "description": "During this time period, I worked a variety of freelance jobs.  My projects included: writing marketing brochures and creating sales packages for Pacific Professionals Inc., a veterinary brokerage firm; creating and maintaining a website for Pacific Professionals Inc., including increasing the site’s search engine optimization (SEO); writing ads for Google Adwords and 'Sell On Amazon' program for Jewish Educational Software, resulting in higher click-through rates; summarizing legal depositions for TranscriptSure Legal Services; and creating feature articles for Mishpacha magazine."
+        "description": "During this time period, I worked a variety of freelance jobs.  My projects included: writing marketing brochures and creating sales packages for Pacific Professionals Inc., a veterinary brokerage firm; creating and maintaining a website for Pacific Professionals Inc., including increasing the site&rsquo;s search engine optimization (SEO); writing ads for Google Adwords and &lsquo;Sell On Amazon&rsquo; program for Jewish Educational Software, resulting in higher click-through rates; summarizing legal depositions for TranscriptSure Legal Services; and creating feature articles for Mishpacha magazine."
     }]
 };
 
@@ -96,23 +102,23 @@ work.display = function() {
 //Projects
 var projectData = {
     "projects": [{
-        "title": "Sample Project One",
-        "dates": "Jan 2016-May 2016",
-        "description": "I want to create a website for my mother-in-law, showcasing all her healing skills, including: reflexology, aromatherapy, energy healing, and therapeutic  massage. This is not an eCommerce site, but more of a calling card for her to share with potential clients.",
-        "images": ["http://lorempixel.com/output/nature-q-c-300-200-8.jpg", "http://lorempixel.com/output/food-q-c-300-200-5.jpg", "http://lorempixel.com/output/cats-q-c-300-200-8.jpg"]
+        "title": "Wonderland Optimization",
+        "url": "http://chavahj.github.io/perfmatters/index.html",
+        "dates": "April of 2016",
+        "description": "This was a mini-project completed during a course on MVVM Javascript. "
     }, {
         "title": "Sample Project Two",
+        "url": "http://chavahj.github.io/perfmatters/index.html",
         "dates": "Apr 2016-Sept 2016",
-        "description": "My husband, in a moment of guilt, offered my website building services to his father — seeing as I was building a website for his mother. In order to preserve peace in the family, I made a website providing details about his musical band.",
-        "images": ["http://lorempixel.com/output/nature-q-c-300-200-6.jpg", "http://lorempixel.com/output/food-q-c-300-200-6.jpg", "http://lorempixel.com/output/cats-q-c-300-200-5.jpg"]
-    }]
+        "description": "My husband, in a moment of guilt, offered my website building services to his father — seeing as I was building a website for his mother. In order to preserve peace in the family, I made a website providing details about his musical band."
+        }]
 };
 
 projectData.display = function() {
     $("#projects").append(HTMLprojectStart);
     for (var project in projectData.projects) {
         if (projectData.projects[project]) {
-            var formattedProjTitle = HTMLprojectTitle.replace("%data%", projectData.projects[project].title);
+            var formattedProjTitle = HTMLprojectTitle.replace("#", projectData.projects[project].url).replace("%data%", projectData.projects[project].title);
             $(".project-entry:last").append(formattedProjTitle);
 
             var formattedProjDates = HTMLprojectDates.replace("%data%", projectData.projects[project].dates);
@@ -120,15 +126,6 @@ projectData.display = function() {
 
             var formattedProjDescription = HTMLprojectDescription.replace("%data%", projectData.projects[project].description);
             $(".project-entry:last").append(formattedProjDescription);
-
-            if (projectData.projects[project].images.length > 0) {
-                for (var image in projectData.projects[project].images) {
-                    if (projectData.projects[project]) {
-                        var formattedProjImg = HTMLprojectImage.replace("%data%", projectData.projects[project].images[image]);
-                        $(".project-entry:last").append(formattedProjImg);
-                    }
-                }
-            }
         }
     }
 };
@@ -222,5 +219,3 @@ bio.display();
 work.display();
 projectData.display();
 education.display();
-
-$("#mapDiv").append(googleMap);
